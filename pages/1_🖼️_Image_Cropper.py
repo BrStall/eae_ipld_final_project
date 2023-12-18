@@ -41,12 +41,11 @@ st.write("#")
 
 # TODO: Ex. 1.1: Get the minimum and maximum values for the vertical and horizontal ranges, so the size of the img_arr array -----
 
-def get_max(img):
-    with Image.open(img) as img:
-        width, height = img.size
-        return width, height
+min_height = 0 
+max_height = img_arr.shape[0]
     
-max_height, max_width = get_max(img)
+min_width = 0 
+max_width = img_arr.shape[1]
 
 # ----- Creating the sliders to receive the user input with the dimensions to crop the image ----- 
 if type(max_height) == int and type(max_width) == int:
