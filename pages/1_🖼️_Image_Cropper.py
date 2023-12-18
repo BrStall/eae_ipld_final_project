@@ -13,12 +13,10 @@ st.set_page_config(
     page_icon="📊",
 )
 
-
 # ----- Left menu -----
 with st.sidebar:
     st.image("eae_img.png", width=200)
     st.write("Interactive Project to open, crop, display and save images using NumPy, PIL and Matplotlib.")
-
 
 # ----- Title of the page -----
 st.title("🖼️ Image Cropper")
@@ -41,7 +39,6 @@ else:
 st.image(img_arr, caption="Original Image" if not is_example else "Original example image", use_column_width=True)
 st.write("#")
 
-
 # TODO: Ex. 1.1: Get the minimum and maximum values for the vertical and horizontal ranges, so the size of the img_arr array -----
 
 def get_max(img):
@@ -51,10 +48,6 @@ def get_max(img):
     
 max_height = get_max(img)
 max_width = get_max(img)
-
-print(f"Height: {max_height} pixels")
-print(f"Width: {max_width} pixels")
-
 
 # ----- Creating the sliders to receive the user input with the dimensions to crop the image ----- 
 if type(max_height) == int and type(max_width) == int:
@@ -84,8 +77,6 @@ img_shape = (1089, 1377, 4)
 img = np.random.random(img_shape)
 
 crop_arr = img[crop_min_h:crop_max_h, crop_min_w:crop_max_w, :]
-
-print(f"Shape: {crop_arr.shape}")
 
 # ----- Displaying the cropped image and creating a download button to download the image -----
 
