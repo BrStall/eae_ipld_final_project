@@ -15,12 +15,12 @@ with st.sidebar:
     st.header("Introduction to Programming Languages for Data")
     st.write("###")
     st.write("***Final Project - Dec 2023***")
-    st.write("**Author:** <Your Name>")
+    st.write("**Author:** Guilherme Datt")
     st.write("**Instructor:** [Enric Domingo](https://github.com/enricd)")
 
 
 # ----- Top title -----
-st.write(f"""<div style="text-align: center;"><h1 style="text-align: center;">👋 Hi! My name is ????</h1></div>""", unsafe_allow_html=True)  # TODO: Add your name
+st.write(f"""<div style="text-align: center;"><h1 style="text-align: center;">👋 Hi! My name is Guilherme Datt</h1></div>""", unsafe_allow_html=True)  # TODO: Add your name
 
 
 # ----- Profile image file -----
@@ -39,7 +39,7 @@ st.write(f"""
 
 
 # ----- Personal title or short description -----
-current_role = "Current Role and/or Studies or Description"   # TODO: Change this
+current_role = "Big Data & Analytics Master Student"   # TODO: Change this
 
 st.write(f"""<div style="text-align: center;"><h4><i>{current_role}</i></h4></div>""", unsafe_allow_html=True)
 
@@ -51,17 +51,17 @@ st.subheader("About Me")
 
 # TODO: Modify and adapt the following lines to your info, you can add or remove some details if you want
 st.write("""
-- 🧑‍💻 I am a <Current Role and/or Studies> 
+- 🧑‍💻 I am a Business Intelligence Coordinator and a Master´s studant in Barcelona 
 
-- 🛩️ prev: <Previous Experience, Background or Studies>
+- 🛩️ prev: I have 3 years working with Data, more specifically with Business Intelligence
 
-- ❤️ <Your Passion and/or Interests>
+- ❤️ Really interested in generating insights through data
 
-- 🤖 <Your Personal Projects>
+- 🤖 You can check my projects on Medium: Guilherme Datt
 
-- 🏂 <Your Hobbies>
+- 🏂 Love studying, reading, and training
 
-- 📫 How to reach me: <Your Email>
+- 📫 How to reach me: guilhermedatt@gmail.com
 
 - 🏠 Barcelona
 """)
