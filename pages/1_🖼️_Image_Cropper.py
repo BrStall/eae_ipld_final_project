@@ -46,7 +46,7 @@ def get_max(img):
         width, height = img.size
         return width, height
     
-max_height, max_width = get_max(img_path)
+max_height, max_width = get_max(img)
 
 
 # ----- Creating the sliders to receive the user input with the dimensions to crop the image ----- 
