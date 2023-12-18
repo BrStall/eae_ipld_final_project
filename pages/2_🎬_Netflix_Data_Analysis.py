@@ -26,26 +26,36 @@ st.divider()
 @st.cache_data
 def load_data():
     data_path = "data/netflix_titles.csv"
-    movies_df = pd.read_csv(data_path, index_col="show_id")  # Assuming 'show_id' is the index column
-    return movies_df
+    try:
+        movies_df = pd.read_csv(data_path, index_col="show_id")  # Assuming 'show_id' is the index column
+        return movies_df
+    except Exception as e:
+        st.error(f"Error loading the dataset: {e}")
+        return None
 
 movies_df = load_data()
 
-# Displaying the dataset in an expandable table
-with st.expander("Check the complete dataset:"):
-    st.dataframe(movies_df)
+# Check if the DataFrame is loaded successfully
+if movies_df is not None:
+    # Displaying the dataset in an expandable table
+    with st.expander("Check the complete dataset:"):
+        st.dataframe(movies_df)
 
-# ----- Extracting some basic information from the dataset -----
+    # ----- Extracting some basic information from the dataset -----
 
-# TODO: Ex 2.2: What is the min and max release years?
+    # TODO: Ex 2.2: What is the min and max release years?
 
-# Substitua NaN por um valor padrão ou use uma estratégia apropriada, como a média dos anos de lançamento
-movies_df['release_year'].fillna(0, inplace=True)  # Substitua 0 pelo valor padrão desejado
+    # Substitua NaN por um valor padrão ou use uma estratégia apropriada, como a média dos anos de lançamento
+    movies_df['release_year'].fillna(0, inplace=True)  # Substitua 0 pelo valor padrão desejado
 
-min_year = movies_df['release_year'].min()
-max_year = movies_df['release_year'].max()
+    min_year = movies_df['release_year'].min()
+    max_year = movies_df['release_year'].max()
 
-print(f"Min year: {min_year}, Max year: {max_year}")
+    print(f"Min year: {min_year}, Max year: {max_year}")
+
+    # Restante do código...
+else:
+    st.subheader("Error loading the dataset. Please check the data file path.")
 
 # TODO: Ex 2.3: How many director names are missing values (NaN)?
 
