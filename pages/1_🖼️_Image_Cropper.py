@@ -41,6 +41,7 @@ st.write("#")
 
 # TODO: Ex. 1.1: Get the minimum and maximum values for the vertical and horizontal ranges, so the size of the img_arr array -----
 
+
 min_height = 0 
 max_height = img_arr.shape[0]
     
@@ -72,9 +73,8 @@ crop_min_w = 550
 crop_max_w = 800
 
 img_shape = (1089, 1377, 4)
-img = np.random.random(img_shape)
 
-crop_arr = img[crop_min_h:crop_max_h, crop_min_w:crop_max_w, :]
+crop_arr = img_arr[crop_min_h:crop_max_h, crop_min_w:crop_max_w, :]
 
 # ----- Displaying the cropped image and creating a download button to download the image -----
 
