@@ -46,8 +46,8 @@ def get_max(img):
         width, height = img.size
         return width, height
     
-max_height = get_max(img)
-max_width = get_max(img)
+max_height, max_width = get_max(img_path)
+
 
 # ----- Creating the sliders to receive the user input with the dimensions to crop the image ----- 
 if type(max_height) == int and type(max_width) == int:
