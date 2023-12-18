@@ -5,49 +5,45 @@ import matplotlib.pyplot as plt
 # Some extra libraries to build the webapp
 import streamlit as st
 
-
 # ----- Page configs -----
 st.set_page_config(
     page_title="<Your Name> Portfolio",
     page_icon="📊",
 )
 
-
 # ----- Left menu -----
 with st.sidebar:
     st.image("eae_img.png", width=200)
-    st.write("Interactive Project to load a dataset with information about Netflix Movies and Series, extract some insights usign Pandas and displaying them with Matplotlib.")
+    st.write("Interactive Project to load a dataset with information about Netflix Movies and Series, extract some insights using Pandas and displaying them with Matplotlib.")
     st.write("Data extracted from: https://www.kaggle.com/datasets/shivamb/netflix-shows (with some cleaning and modifications)")
-
 
 # ----- Title of the page -----
 st.title("🎬 Netflix Data Analysis")
 st.divider()
-
 
 # ----- Loading the dataset -----
 
 @st.cache_data
 def load_data():
     data_path = "data/netflix_titles.csv"
-
-    movies_df = None  # TODO: Ex 2.1: Load the dataset using Pandas, use the data_path variable and set the index column to "show_id"
-
-    return movies_df   # a Pandas DataFrame
-
+    movies_df = pd.read_csv(data_path, index_col="show_id")  # Assuming 'show_id' is the index column
+    return movies_df
 
 movies_df = load_data()
 
-# Displaying the dataset in a expandable table
+# Displaying the dataset in an expandable table
 with st.expander("Check the complete dataset:"):
     st.dataframe(movies_df)
-
 
 # ----- Extracting some basic information from the dataset -----
 
 # TODO: Ex 2.2: What is the min and max release years?
-min_year = movies_df['release_year'].min()  # TODO
-max_year = movies_df['release_year'].max() # TODO
+
+# Substitua NaN por um valor padrão ou use uma estratégia apropriada, como a média dos anos de lançamento
+movies_df['release_year'].fillna(0, inplace=True)  # Substitua 0 pelo valor padrão desejado
+
+min_year = movies_df['release_year'].min()
+max_year = movies_df['release_year'].max()
 
 print(f"Min year: {min_year}, Max year: {max_year}")
 
@@ -157,4 +153,3 @@ if movies_avg_duration_per_year is not None:
 
 else:
     st.subheader("⚠️ You still need to develop the Ex 2.7.")
-
