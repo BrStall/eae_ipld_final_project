@@ -153,11 +153,11 @@ fig3 = plt.figure(figsize=(15, 5))
 for city in selected_cities:
     city_df = temps_df[temps_df['City'] == city]
     city_df_period = city_df[(city_df['Date'] > start_date) & (city_df['Date'] < end_date)]
-    plt.hist(city_df_period['Date'], city_df_period['AvgTemperatureCelsius'], label=city)
+    plt.hist(city_df_period['AvgTemperatureCelsius'], bins=20, alpha=0.5, label=city)
 
-plt.title('Temperature Trends for Selected Cities')
-plt.xlabel('Date')
-plt.ylabel('Avg Celsius')
+plt.title('Temperature Distribution for Selected Cities')
+plt.xlabel('Avg Celsius')
+plt.ylabel('Frequency')
 plt.legend()
 
 c.pyplot(fig3)
