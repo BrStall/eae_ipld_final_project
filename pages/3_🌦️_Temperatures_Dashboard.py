@@ -131,7 +131,7 @@ if unique_countries_list is not None and len(selected_cities) > 0:
     # TODO: Ex 3.7: Plot the temperatures over time for the selected cities for the selected time period,
     # every city has to be its own line with a different color.
 
-    fig = plt.figure(figsize=(10, 5))
+    fig2 = plt.figure(figsize=(10, 5))
 
     for city in selected_cities:
         city_df = temps_df[temps_df['City'] == city]
@@ -144,25 +144,25 @@ if unique_countries_list is not None and len(selected_cities) > 0:
     plt.ylabel('Avg Celsius')
     plt.legend()
     
-    c.pyplot(fig)
+    c.pyplot(fig2)
 
     # TODO: Make a histogram of the temperature reads of a list of selected cities, for the selected time period, 
     # every city has to be its own distribution with a different color.
 
-plt.figure(figsize=(15, 5))
+fig3 = plt.figure(figsize=(15, 5))
 
 for city in selected_cities:
     city_df = temps_df[temps_df['City'] == city]
     city_df_period = city_df[(city_df['Date'] > start_date) & (city_df['Date'] < end_date)]
     plt.hist(city_df_period['AvgTemperatureCelsius'], bins=20, alpha=0.5, label=city)
 
-    plt.title('Temperature Distribution for Selected Cities')
-    plt.xlabel('Avg Celsius')
-    plt.ylabel('Frequency')
+plt.title('Temperature Distribution for Selected Cities')
+plt.xlabel('Avg Celsius')
+plt.ylabel('Frequency')
 
-    plt.legend()
+plt.legend()
 
-    c.pyplot(fig)
+c.pyplot(fig3)
 
 
 
