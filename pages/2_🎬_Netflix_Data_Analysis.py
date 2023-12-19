@@ -66,17 +66,20 @@ print(f"Number of missing directors: {num_missing_directors}")
 # TODO: Ex 2.4: How many different countries are there in the data?
 
 df = movies_df.fillna('Unknown')
-unique_values_list = []
 
-for column_name in df.columns:
-    if df['country'].apply(isinstance, args=(list,)).all():
-        df['country'] = df['country'].apply(lambda x: ', '.join(x))
+countries_list = df["country"].unique().tolist()
 
-    unique_values_list.extend(df['country'].str.split(', ').explode().unique())
+countries_str = ', '.join(countries_list)
 
-n_countries = len(set(unique_values_list))
+split_list = countries_str.split(', ')
 
-print(f"There are {n_countries} different countries in the data")
+unique_countries_list = []
+
+for country in split_list:
+    if country not in unique_countries_list and country != ("") and ',' not in country:
+        unique_countries_list.append(country)
+
+n_countries = len(unique_countries_list) 
 
 # TODO: Ex 2.5: How many characters long are on average the title names?
 
