@@ -120,11 +120,6 @@ top_10_countries = df_copy.groupby(['country2', 'type']).size().sort_values(asce
 
 print(top_10_countries)
 
-# Code to plot the pie chart from your data results
-fig = plt.figure(figsize=(8, 8))
-plt.pie(top_10_countries, labels=top_10_countries.index, autopct="%.2f%%")
-plt.title(f"Top 10 Countries in 2005")
-
 # print(top_10_countries)
 if top_10_countries is not None:
     fig = plt.figure(figsize=(8, 8))
