@@ -62,11 +62,11 @@ min_date = temps_df['Date'].min()
 max_date = temps_df['Date'].max()  
 
 # TODO:  Ex 3.5: What are the global minimum and maximum temperatures? Find the city and the date of each of them.
-min_temp = temps_df['AvgTemperatureFahrenheit'].min()
-max_temp = temps_df['AvgTemperatureFahrenheit'].max()
+min_temp = temps_df['AvgTemperatureCelsius'].min()
+max_temp = temps_df['AvgTemperatureCelsius'].max()
 
-min_temp_row = temps_df.loc[temps_df['AvgTemperatureFahrenheit'] == min_temp]
-max_temp_row = temps_df.loc[temps_df['AvgTemperatureFahrenheit'] == max_temp]
+min_temp_row = temps_df.loc[temps_df['AvgTemperatureCelsius'] == min_temp]
+max_temp_row = temps_df.loc[temps_df['AvgTemperatureCelsius'] == max_temp]
 
 min_temp_city = min_temp_row['City'].values[0]
 min_temp_date = min_temp_row['Date'].values[0]
