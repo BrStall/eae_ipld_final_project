@@ -8,14 +8,19 @@ st.set_page_config(
     page_icon="📊",
 )
 
+
 # ----- Left menu -----
 with st.sidebar:
-    st.header("Contact me!")
+    st.image("eae_img.png", width=200)
+    st.header("Introduction to Programming Languages for Data")
     st.write("###")
-    st.write("""- 🧑‍💻 Linkedin: - 📫 Email: guilhermedatt@gmail.com, - 🛩️ GitHub: - 🛩️ WhatsApp:) # COMPLETE HERE
+    st.write("***Final Project - Dec 2023***")
+    st.write("**Author:** Guilherme Datt")
+    st.write("**Instructor:** [Enric Domingo](https://github.com/enricd)")
+
 
 # ----- Top title -----
-st.write(f"""<div style="text-align: center;"><h1 style="text-align: center;">👋 Welcome to my Portfolio!</h1></div>""", unsafe_allow_html=True)  
+st.write(f"""<div style="text-align: center;"><h1 style="text-align: center;">👋 Hi! My name is Guilherme Datt</h1></div>""", unsafe_allow_html=True)  # TODO: Add your name
 
 
 # ----- Profile image file -----
@@ -34,32 +39,31 @@ st.write(f"""
 
 
 # ----- Personal title or short description -----
-current_role = "Business Intelligence Trainee at Neuroeletrics. Big Data & Analytics Master Student at EAE Business School"   # TODO: Change this
+current_role = "Big Data & Analytics Master Student"   # TODO: Change this
 
 st.write(f"""<div style="text-align: center;"><h4><i>{current_role}</i></h4></div>""", unsafe_allow_html=True)
 
 st.write("##")    # Adding some space
+
 
 # ----- About me section -----
 st.subheader("About Me")
 
 # TODO: Modify and adapt the following lines to your info, you can add or remove some details if you want
 st.write("""
-- 🧑‍💻 TALK ABOUT WHAT AM I DOING NOW
+- 🧑‍💻 I am a Business Intelligence Coordinator and a Master´s studant in Barcelona 
 
-- 🛩️ prev: TALK ABOUT EXPERIENCE
+- 🛩️ prev: I have 3 years working with Data, more specifically with Business Intelligence
 
-- ❤️ TALK ABOUT INTERESTS
+- ❤️ Really interested in generating insights through data
+
+- 🤖 You can check my projects on Medium: Guilherme Datt
+
+- 🏂 Love studying, reading, and training
+
+- 📫 How to reach me: guilhermedatt@gmail.com
 
 - 🏠 Barcelona
 """)
 
-# ----- HARD SKILLS SECTION -----
-st.subheader("Tools that I use")
-
-# TODO: Modify and adapt the following lines to your info, you can add or remove some details if you want
-st.write("""
-
-- 🧑‍💻TALK ABOUT THE TOOLS I HAVE EXPERIENCE: PYTHON, SQL, Visualization: Power BI, Google Datastudio, Tableau, Statistics.
-
-""")
+# Feel free to add other points like your Linkedin, Github, Social Media, etc.
